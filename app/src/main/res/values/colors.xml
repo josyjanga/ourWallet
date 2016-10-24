@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#42a2c6</color>
+    <color name="colorPrimaryDark">#da1411</color>
+    <color name="colorAccent">#da1411</color>
+    <color name="colorGreyBackground">#e7e7e7</color>
+    <color name="colorBtnRed">#da1411</color>
+    <color name="colorFontlight">#ffffff</color>
+    <color name="colorFontDark">#283236</color>
+
+    <color name="colorWallet1">#689f38</color>
+    <color name="colorWallet2">#ad1457</color>
+    <color name="colorWallet3">#eda200</color>
+    <color name="colorWallet4">#009688</color>
+    <color name="colorWallet5">#448aff</color>
+    <color name="colorWallet6">#689f38</color>
+    <color name="colorWallet7">#e53935</color>
+
+</resources>

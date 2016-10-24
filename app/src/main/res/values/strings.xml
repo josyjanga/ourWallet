@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Our Wallet</string>
+    <string name="app_statistics">Our Wallet Statistics</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_settings">Home</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="hint_wallet_name">Name of Wallet</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">User not available</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_create_shared_wallet">New Wallet</string>
+    <string name="wallet_create">Create</string>
+    <string name="add_wallet_member">Add Wallet Member</string>
+    <string name="drawer_create_wallet">Create wallet</string>
+    <string name="drawer_payments">Payments</string>
+    <string name="drawer_statistics">Statistics</string>
+    <string name="drawer_join_wallet">Join wallet</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_help">Help &amp; Feedback</string>
+    <string name="title_payment">Pay Contactless</string>
+    <string name="hint_payment">Hold your Phone up to the Terminal</string>
+    <string name="title_activity_pair_member">PairMemberActivity</string>
+    <string-array name="spinner_timeframe">
+        <item>Total time</item>
+        <item>Last month</item>
+        <item>Last year</item>
+    </string-array>
+    <string name="title_options">Settings</string>
+    <string name="label_btn_upload_img">Upload Image...</string>
+    <string name="drawer_profile">My Profile</string>
+
+    <string name="hint_pair">Add another phone by bumping</string>
+
+    <string name="user_join_card_emulate">User Join Card Emulation</string>
+    <string name="tf_help_header_val">How it works</string>
+    <string name="tf_help_text_val">ourWallet is a simple, fast, convenient and secure shared wallet.</string>
+    <string name="tf_help_text_val2">You can create a new virtual account by simply sticking together two smartphones.</string>
+    <string name="tf_help_text_val3">Once a virtual account is created, every member of the shared account can make payments via NFC. The payment is then splitted to all wallet members.</string>
+    <string name="tf_help_text_val4">Each wallet member will get notified of every transaction. Also all members can have a look at the payment statistics, which give them insights on their group buying behaviours.</string>
+    <string name="title_help">Settings</string>
+    <string name="transaction_detail">Payment Detail</string>
+</resources>

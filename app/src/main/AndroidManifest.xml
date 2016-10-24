@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="wallet.apricot.at.ourwallet"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Card emulation was introduced in API 19. -->
+    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle
+    <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />-->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <!--
+      IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+      to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+    <permission android:name="wallet.apricot.at.ourwallet.permission.C2D_MESSAGE"
+                android:protectionLevel="signature"/>
+    <uses-permission android:name="wallet.apricot.at.ourwallet.permission.C2D_MESSAGE"/>
+
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+
+
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".gui.Main2Activity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".gui.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".gui.Main2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="wallet.apricot.at.ourwallet.gui.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".gui.CreateSharedWalletActivity"
+            android:label="@string/title_activity_create_shared_wallet"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gui.TransactionDetailActivity"
+            android:label="@string/transaction_detail"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gui.OptionsActivity"
+            android:label="@string/title_options"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".gui.HelpActivity"
+            android:label="@string/title_help"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".gui.ProfileActivity"
+            android:label="@string/drawer_profile"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".gui.PaymentActivity"
+            android:label="@string/title_payment"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+
+            <!-- NFC-related intent filter. Allows application to handle messages from any
+                 NFC-A devices discovered. Other Android devices are required to support NFC-A.
+                 See: res/xml/nfc_tech_filter.xml -->
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+            </activity>
+
+        <activity
+            android:name=".gui.PairMemberActivity"
+            android:label="@string/title_activity_pair_member"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+
+                <data android:mimeType="application/at.apricot.wallet.beam" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.parse.PushService"/>
+
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+
+                <category android:name="wallet.apricot.at.ourwallet"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE"/>
+                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.OPEN"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

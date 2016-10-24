@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="wallet.apricot.at.ourwallet.gui.CreateSharedWalletActivity">
+
+    <EditText
+        android:id="@+id/edit_wallet_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textCursorDrawable="@null"
+        android:imeOptions="actionDone"
+        android:hint="@string/hint_wallet_name" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_wallet_members"
+        android:layout_below="@+id/edit_wallet_name"
+        android:layout_alignLeft="@+id/edit_wallet_name"
+        android:layout_alignStart="@+id/edit_wallet_name"
+        android:layout_marginTop="30dp"
+        android:layout_alignEnd="@+id/edit_wallet_name" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_white_1000"
+        android:background="@color/colorBtnRed"
+        android:text="@string/add_wallet_member"
+        android:id="@+id/btn_add_member"
+        android:layout_alignParentTop="false"
+        android:layout_alignLeft="@+id/edit_wallet_name"
+        android:layout_alignStart="@+id/list_wallet_members"
+        android:layout_below="@+id/list_wallet_members"
+        android:layout_alignEnd="@+id/list_wallet_members"/>
+</RelativeLayout>
